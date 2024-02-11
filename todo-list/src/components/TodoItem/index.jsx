@@ -3,10 +3,30 @@ import "./style.css";
 function TodoItem(props) {
   return (
     <div className={`todo ${props.todo.isCompleted ? "complete" : ""}`}>
-      {props.todo.text}
+      <div>{props.index + 1}</div>
+      <div className="todo-text">{props.todo.text}</div>
       <div>
         <button onClick={() => props.completeTodo(props.index)}>
-          Complete
+          {props.todo.isCompleted ? "Completed" : "Complete"}
+        </button>
+        <button
+          className="delete-button"
+          onClick={() => props.removeTodo(props.index)}
+        >
+          X
+        </button>
+
+        <button
+          className="up-button"
+          onClick={() => props.moveTodoUp(props.index)}
+        >
+          ↑
+        </button>
+        <button
+          className="down-button"
+          onClick={() => props.moveTodoDown(props.index)}
+        >
+          ↓
         </button>
       </div>
     </div>

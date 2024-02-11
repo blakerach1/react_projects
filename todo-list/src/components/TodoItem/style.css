@@ -11,3 +11,19 @@
 .complete {
   text-decoration: line-through;
 }
+
+.delete-button {
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.todo-text {
+  text-align: left;
+  display: inline-block;
+  width: 70%;
+}

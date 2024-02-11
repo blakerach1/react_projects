@@ -32,7 +32,33 @@ function App() {
 
   const completeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].isCompleted = true;
+    newTodos[index].isCompleted = !newTodos[index].isCompleted;
+    setTodos(newTodos);
+  };
+
+  const removeTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
+  // function to move a todo up in the list
+  const moveTodoUp = (index) => {
+    if (index === 0) return; // can't move the first todo up
+    const newTodos = [...todos];
+    const temp = newTodos[index];
+    newTodos[index] = newTodos[index - 1];
+    newTodos[index - 1] = temp;
+    setTodos(newTodos);
+  };
+
+  // function to move a todo down in the list
+  const moveTodoDown = (index) => {
+    if (index === todos.length - 1) return; // can't move the last todo down
+    const newTodos = [...todos];
+    const temp = newTodos[index];
+    newTodos[index] = newTodos[index + 1];
+    newTodos[index + 1] = temp;
     setTodos(newTodos);
   };
 
@@ -46,9 +72,12 @@ function App() {
       {todos.map((todo, index) => (
         <TodoItem
           todo={todo}
-          key={index}
+          key={todo.id} // unique key for each todo
           index={index}
           completeTodo={completeTodo}
+          removeTodo={removeTodo}
+          moveTodoUp={moveTodoUp}
+          moveTodoDown={moveTodoDown}
         />
       ))}
       <TodoForm addTodo={addTodo} />
