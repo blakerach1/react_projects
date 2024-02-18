@@ -89,3 +89,4 @@ export default App;
 
 // react tracks the web page by indexing each piece of html with a key
 // props are read only when they are passed into functions, and are objects that contain all the properties that are passed to a component
+// we are using React to render to HTML, hence "class" is reserved for HTML classes, so we use "className" instead

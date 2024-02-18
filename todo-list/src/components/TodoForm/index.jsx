@@ -21,6 +21,9 @@ function TodoForm(props) {
         placeholder="Add Todo..."
         onChange={(event) => setValue(event.target.value)}
       />
+      <button className="form-submit-button" type="submit">
+        Add
+      </button>
     </form>
   );
 }
