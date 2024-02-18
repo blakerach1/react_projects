@@ -88,4 +88,4 @@ function App() {
 export default App;
 
 // react tracks the web page by indexing each piece of html with a key
-// props are read only when they are passed into functions
+// props are read only when they are passed into functions, and are objects that contain all the properties that are passed to a component
