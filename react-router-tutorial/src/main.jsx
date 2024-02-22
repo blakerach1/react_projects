@@ -25,6 +25,8 @@ const router = createBrowserRouter([
   },
 ]);
 
+// the below gives the app a way of listening to which components it should render.
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* Here we wrap our app in the router provider so the pages render */}
